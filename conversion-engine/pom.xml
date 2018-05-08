@@ -25,5 +25,7 @@
   <modules>
     <module>tool-a</module>
     <module>model</module>
+	<module>convert-doc-to-pdf</module>
+	<module>convert-excel-to-pdf</module>
   </modules>
 </project>

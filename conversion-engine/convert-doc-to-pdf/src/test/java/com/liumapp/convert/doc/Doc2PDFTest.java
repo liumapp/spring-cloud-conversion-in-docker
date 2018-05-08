@@ -17,9 +17,9 @@ import java.io.InputStream;
 
 public class Doc2PDFTest extends TestCase {
 
-    private String pdfPath = "/usr/local/tomcat/project/convert-doc-to-pdf/test.pdf";
+    private String pdfPath = "/usr/local/tomcat/project/spring-cloud-conversion-in-docker/conversion-engine/convert-doc-to-pdf/test.pdf";
 
-    private String docPath = "/usr/local/tomcat/project/convert-doc-to-pdf/doc/test.doc";
+    private String docPath = "/usr/local/tomcat/project/spring-cloud-conversion-in-docker/conversion-engine/convert-doc-to-pdf/doc/test.doc";
 
     @Test
     public void testConvert () throws FileNotFoundException {
