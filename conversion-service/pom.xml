@@ -23,7 +23,8 @@
 	</developers>
 
   <modules>
-	<module>demo-api-a</module>
-	<module>demo-api-b</module>
+	<!--<module>demo-api-a</module>-->
+	<module>convert-pdf-to-img</module>
+    <module>business</module>
   </modules>
 </project>
