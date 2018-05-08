@@ -40,4 +40,12 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+
+	<modules>
+		<module>conversion-config</module>
+		<module>conversion-engine</module>
+		<module>conversion-eureka</module>
+		<module>conversion-gateway</module>
+		<module>conversion-service</module>
+	</modules>
 </project>
