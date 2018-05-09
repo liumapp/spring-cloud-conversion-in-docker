@@ -1,30 +1,25 @@
 package com.liumapp.docker.conversion.service.business.controller;
 
-import com.liumapp.docker.conversion.service.business.entity.Guest;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Created by liumapp on 9/28/17.
- * E-mail:liumapp.com@gmail.com
- * home-page:http://www.liumapp.com
+ * @author liumapp
+ * @file IndexController.java
+ * @email liumapp.com@gmail.com
+ * @homepage http://www.liumapp.com
+ * @date 5/9/18
  */
-@Controller
+@RestController
 @RequestMapping("/")
 public class IndexController {
 
-    @Autowired
-    private Guest guest;
 
-    @GetMapping("/")
+    @GetMapping("")
     public String index (ModelMap model) {
-
-        model.addAttribute("name" , guest.getName());
-        model.addAttribute("sex" , guest.getSex());
-        return "index";
+        return "this is business module";
     }
 
 }
