@@ -1,5 +1,7 @@
 package com.liumapp.docker.conversion.service.business.controller;
 
+import org.springframework.amqp.core.AmqpTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,6 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/")
 public class IndexController {
 
+    @Autowired
+    private AmqpTemplate amqpTemplate;
+
     @GetMapping("")
     public String index () {
         return "this is business module";
@@ -22,6 +27,7 @@ public class IndexController {
 
     @RequestMapping("sendDoc")
     public String sendDoc () {
+        amqpTemplate.convertAndSend("simple-img-converter-queue" , "a");
         return "success";
     }
 

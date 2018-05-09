@@ -14,7 +14,6 @@ import java.io.InputStream;
  * @homepage http://www.liumapp.com
  * @date 4/25/18
  */
-
 public class Doc2PDFTest extends TestCase {
 
     private String pdfPath = "/usr/local/tomcat/project/spring-cloud-conversion-in-docker/conversion-engine/convert-doc-to-pdf/test.pdf";
