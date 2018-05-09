@@ -27,7 +27,12 @@ public class BusinessTest{
     @Test
     public void testDoc () {
         Doc2PDF doc2PDF = new Doc2PDF();
-        doc2PDF.doc2pdf(pdfPath + "/test.pdf" , docPath + "/test.doc");
+        doc2PDF.doc2pdf(pdfPath + "/testdoc.pdf" , docPath + "/test.doc");
+    }
+
+    @Test
+    public void testExcel () {
+        
     }
 
 }
