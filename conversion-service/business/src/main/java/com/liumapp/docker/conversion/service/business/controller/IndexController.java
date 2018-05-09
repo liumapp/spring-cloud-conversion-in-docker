@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
+
 /**
  * @author liumapp
  * @file IndexController.java
@@ -49,7 +51,8 @@ public class IndexController {
     public String sendDoc () {
         DocPattern docPattern = new DocPattern();
         docPattern.setType("sys");
-        docPattern.setPdfPath(pdfPath);
+        docPattern.setPdfPath(pdfPath + "/output" + new Date() + ".pdf");
+        docPattern.setSysPath(docPath + "/test.doc");
         amqpTemplate.convertAndSend("doc-converter-queue", JSON.toJSONString(docPattern));
         return "success";
     }
@@ -62,7 +65,8 @@ public class IndexController {
     public String sendExcel () {
         ExcelPattern excelPattern = new ExcelPattern();
         excelPattern.setType("sys");
-        excelPattern.setPdfPath(pdfPath);
+        excelPattern.setPdfPath(pdfPath + "/output" + new Date() + ".pdf");
+        excelPattern.setSysPath(excelPath + "/test.xlsx");
         amqpTemplate.convertAndSend("excel-converter-queue", JSON.toJSONString(excelPattern));
         return "success";
     }

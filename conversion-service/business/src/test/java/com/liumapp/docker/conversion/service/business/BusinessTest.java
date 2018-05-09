@@ -30,14 +30,14 @@ public class BusinessTest{
 
     @Test
     public void testDoc () {
-        Doc2PDF doc2PDF = new Doc2PDF();
-        doc2PDF.doc2pdf(pdfPath + "/testdoc.pdf" , docPath + "/test.doc");
+//        Doc2PDF doc2PDF = new Doc2PDF();
+//        doc2PDF.doc2pdf(pdfPath + "/testdoc.pdf" , docPath + "/test.doc");
     }
 
     @Test
     public void testExcel () {
-        CellToPDF cellToPDF = new CellToPDF();
-        cellToPDF.excel2pdf(pdfPath + "/testexcel.pdf" , excelPath + "/test.xlsx");
+//        CellToPDF cellToPDF = new CellToPDF();
+//        cellToPDF.excel2pdf(pdfPath + "/testexcel.pdf" , excelPath + "/test.xlsx");
     }
 
 }

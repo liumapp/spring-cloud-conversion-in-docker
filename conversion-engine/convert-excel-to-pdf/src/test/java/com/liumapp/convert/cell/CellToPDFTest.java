@@ -20,8 +20,8 @@ public class CellToPDFTest extends TestCase {
 
     @Test
     public void testConvert () throws FileNotFoundException {
-        CellToPDF cellToPDF = new CellToPDF();
-        cellToPDF.excel2pdf(pdfPath,excelPath);
+//        CellToPDF cellToPDF = new CellToPDF();
+//        cellToPDF.excel2pdf(pdfPath,excelPath);
     }
 
 

@@ -23,8 +23,8 @@ public class Doc2PDFTest extends TestCase {
     @Test
     public void testConvert () throws FileNotFoundException {
 
-        Doc2PDF doc2PDF = new Doc2PDF();
-        doc2PDF.doc2pdf(pdfPath,docPath);
+//        Doc2PDF doc2PDF = new Doc2PDF();
+//        doc2PDF.doc2pdf(pdfPath,docPath);
     }
 
 }

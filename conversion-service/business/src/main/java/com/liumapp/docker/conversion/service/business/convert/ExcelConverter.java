@@ -32,7 +32,7 @@ public class ExcelConverter {
         pagePattern.setSysPdfPath(excelPattern.getPdfPath());
         try {
             CellToPDF cellToPDF = new CellToPDF();
-            cellToPDF.excel2pdf(excelPattern.getPdfPath() , excelPattern.getPdfPath());
+            cellToPDF.excel2pdf(excelPattern.getPdfPath() , excelPattern.getSysPath());
         } catch (Exception e) {
             // add failed info
             amqpTemplate.convertAndSend("excel-converter-result-queue", excelResultPattern);
@@ -40,7 +40,7 @@ public class ExcelConverter {
             return ;
         }
         // add success info , and convert pdf into pic
-        amqpTemplate.convertAndSend("excel-converter-result-queue", excelResultPattern);
+        amqpTemplate.convertAndSend("excel-converter-result-queue", JSON.toJSONString(excelResultPattern));
         amqpTemplate.convertAndSend("pic-converter-queue", JSON.toJSONString(pagePattern));
     }
 
