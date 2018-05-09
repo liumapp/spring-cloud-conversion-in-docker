@@ -2,6 +2,7 @@ package com.liumapp.docker.conversion.service.business;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * @author liumapp
@@ -10,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @homepage http://www.liumapp.com
  * @date 5/9/18
  */
+@EnableDiscoveryClient
 @SpringBootApplication
 public class Business {
 
