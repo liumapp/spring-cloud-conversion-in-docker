@@ -31,35 +31,39 @@ public class SendOrderTest {
 
     @Test
     public void testSendPdf () {
-        SimplePdfPattern simplePdfPattern = new SimplePdfPattern();
-        simplePdfPattern.setPath("/usr/local/tomcat/project/convert-pdf-to-img/pdf/test.pdf");
-        amqpTemplate.convertAndSend("simple-img-converter-queue", JSON.toJSONString(simplePdfPattern));
+        if (false) {
+            SimplePdfPattern simplePdfPattern = new SimplePdfPattern();
+            simplePdfPattern.setPath("/usr/local/tomcat/project/convert-pdf-to-img/pdf/test.pdf");
+            amqpTemplate.convertAndSend("simple-img-converter-queue", JSON.toJSONString(simplePdfPattern));
+        }
     }
 
     @Test
     public void testKeepSend () {
-        Thread sendThread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while(true) {
-                    try {
-                        System.out.println("send a msg to queue");
-                        amqpTemplate.convertAndSend("hello" ,
-                                "hello , now the time is : " + new Date());
-                        Thread.sleep(3000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+        if (false) {
+            Thread sendThread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    while(true) {
+                        try {
+                            System.out.println("send a msg to queue");
+                            amqpTemplate.convertAndSend("hello" ,
+                                    "hello , now the time is : " + new Date());
+                            Thread.sleep(3000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
-            }
-        });
-        sendThread.start();
+            });
+            sendThread.start();
 
-        while (true) {
-            try {
-                Thread.sleep(3000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            while (true) {
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
