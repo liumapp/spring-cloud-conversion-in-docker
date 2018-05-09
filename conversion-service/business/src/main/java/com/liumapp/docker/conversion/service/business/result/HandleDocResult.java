@@ -20,7 +20,7 @@ public class HandleDocResult {
     private static Logger logger = LoggerFactory.getLogger(HandleDocResult.class);
 
     @RabbitHandler
-    public void process () {
+    public void process (String msg) {
 
     }
 

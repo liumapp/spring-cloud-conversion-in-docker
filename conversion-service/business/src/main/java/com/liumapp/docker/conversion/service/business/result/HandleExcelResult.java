@@ -20,7 +20,7 @@ public class HandleExcelResult {
     private static Logger logger = LoggerFactory.getLogger(HandleExcelResult.class);
 
     @RabbitHandler
-    public void process () {
+    public void process (String msg) {
 
     }
 

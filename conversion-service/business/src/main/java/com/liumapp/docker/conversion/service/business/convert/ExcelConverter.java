@@ -2,10 +2,7 @@ package com.liumapp.docker.conversion.service.business.convert;
 
 import com.alibaba.fastjson.JSON;
 import com.liumapp.convert.cell.CellToPDF;
-import com.liumapp.pattern.conversion.AllPagePattern;
-import com.liumapp.pattern.conversion.ExcelPattern;
-import com.liumapp.pattern.conversion.ExcelResultPattern;
-import com.liumapp.pattern.conversion.FirstPagePattern;
+import com.liumapp.pattern.conversion.*;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -30,8 +27,7 @@ public class ExcelConverter {
     public void process (String msg) {
         ExcelPattern excelPattern = JSON.parseObject(msg , ExcelPattern.class);
         ExcelResultPattern excelResultPattern = new ExcelResultPattern();
-        FirstPagePattern firstPagePattern = new FirstPagePattern();
-        AllPagePattern allPagePattern = new AllPagePattern();
+        PagePattern pagePattern = new PagePattern();
         try {
             CellToPDF cellToPDF = new CellToPDF();
             cellToPDF.excel2pdf(excelPattern.getPdfPath() , excelPattern.getPdfPath());
@@ -43,8 +39,7 @@ public class ExcelConverter {
         }
         // add success info , and convert pdf into pic
         amqpTemplate.convertAndSend("excel-converter-result-queue", excelResultPattern);
-        amqpTemplate.convertAndSend("first-pic-converter-queue", JSON.toJSONString(firstPagePattern));
-        amqpTemplate.convertAndSend("all-pic-converter-queue", JSON.toJSONString(allPagePattern));
+        amqpTemplate.convertAndSend("pic-converter-queue", JSON.toJSONString(pagePattern));
     }
 
 }

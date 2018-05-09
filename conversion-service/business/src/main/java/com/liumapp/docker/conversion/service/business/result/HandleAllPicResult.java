@@ -20,7 +20,7 @@ public class HandleAllPicResult {
     private static Logger logger = LoggerFactory.getLogger(HandleAllPicResult.class);
 
     @RabbitHandler
-    public void process () {
+    public void process (String msg) {
 
     }
 

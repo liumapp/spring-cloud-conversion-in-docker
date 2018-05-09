@@ -29,4 +29,34 @@ public class RabbitConf {
         return new Queue ("img-converter-result-queue");
     }
 
+    @Bean
+    public Queue FirstPicConverterQueue () {
+        return new Queue ("first-pic-converter-queue");
+    }
+
+    @Bean
+    public Queue FirstPicConverterResultQueue () {
+        return new Queue ("first-pic-converter-result-queue");
+    }
+
+    @Bean
+    public Queue AllPicConverterQueue () {
+        return new Queue ("all-pic-converter-queue");
+    }
+
+    @Bean
+    public Queue AllPicConverterResultQueue () {
+        return new Queue ("all-pic-converter-result-queue");
+    }
+
+    @Bean
+    public Queue PicConverterQueue () {
+        return new Queue ("pic-converter-queue");
+    }
+
+    @Bean
+    public Queue PicConverterResultQueue () {
+        return new Queue ("pic-converter-result-queue");
+    }
+
 }
