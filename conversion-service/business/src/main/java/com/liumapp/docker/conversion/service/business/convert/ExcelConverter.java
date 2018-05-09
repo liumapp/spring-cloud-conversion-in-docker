@@ -1,5 +1,7 @@
 package com.liumapp.docker.conversion.service.business.convert;
 
+import com.alibaba.fastjson.JSON;
+import com.liumapp.pattern.conversion.ExcelPattern;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
@@ -16,8 +18,8 @@ import org.springframework.stereotype.Component;
 public class ExcelConverter {
 
     @RabbitHandler
-    public void process () {
-
+    public void process (String msg) {
+        ExcelPattern excelPattern = JSON.parseObject(msg , ExcelPattern.class);
     }
 
 }
