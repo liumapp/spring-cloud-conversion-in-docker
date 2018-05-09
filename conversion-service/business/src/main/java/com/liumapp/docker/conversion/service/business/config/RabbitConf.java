@@ -16,12 +16,27 @@ public class RabbitConf {
 
     @Bean
     public Queue ImgConverterQueue () {
+        return new Queue ("img-converter-queue");
+    }
+
+    @Bean
+    public Queue SimpleImgConverterQueue () {
         return new Queue("simple-img-converter-queue");
     }
 
     @Bean
     public Queue ImgConverterResultQueue () {
         return new Queue ("img-converter-result-queue");
+    }
+
+    @Bean
+    public Queue OfficeConverterResultQueue () {
+        return new Queue ("office-converter-result-queue");
+    }
+
+    @Bean
+    public Queue OfficeConverterQueue () {
+        return new Queue ("office-converter-queue");
     }
 
 }
