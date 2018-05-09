@@ -27,6 +27,8 @@ public class DocConverter {
     public void process (String msg) {
         DocPattern docPattern = JSON.parseObject(msg, DocPattern.class);
         PagePattern pagePattern = new PagePattern();
+        pagePattern.setType("sys");
+        pagePattern.setSysPdfPath(docPattern.getPdfPath());
         DocResultPattern docResultPattern = new DocResultPattern();
         try {
             Doc2PDF doc2PDF = new Doc2PDF();

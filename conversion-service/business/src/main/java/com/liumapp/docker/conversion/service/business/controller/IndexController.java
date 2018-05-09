@@ -48,6 +48,8 @@ public class IndexController {
     @RequestMapping("doc")
     public String sendDoc () {
         DocPattern docPattern = new DocPattern();
+        docPattern.setType("sys");
+        docPattern.setPdfPath(pdfPath);
         amqpTemplate.convertAndSend("doc-converter-queue", JSON.toJSONString(docPattern));
         return "success";
     }
@@ -59,6 +61,8 @@ public class IndexController {
     @RequestMapping("excel")
     public String sendExcel () {
         ExcelPattern excelPattern = new ExcelPattern();
+        excelPattern.setType("sys");
+        excelPattern.setPdfPath(pdfPath);
         amqpTemplate.convertAndSend("excel-converter-queue", JSON.toJSONString(excelPattern));
         return "success";
     }

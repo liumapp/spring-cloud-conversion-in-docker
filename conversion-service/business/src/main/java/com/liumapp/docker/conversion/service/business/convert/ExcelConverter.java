@@ -28,6 +28,8 @@ public class ExcelConverter {
         ExcelPattern excelPattern = JSON.parseObject(msg , ExcelPattern.class);
         ExcelResultPattern excelResultPattern = new ExcelResultPattern();
         PagePattern pagePattern = new PagePattern();
+        pagePattern.setType("sys");
+        pagePattern.setSysPdfPath(excelPattern.getPdfPath());
         try {
             CellToPDF cellToPDF = new CellToPDF();
             cellToPDF.excel2pdf(excelPattern.getPdfPath() , excelPattern.getPdfPath());

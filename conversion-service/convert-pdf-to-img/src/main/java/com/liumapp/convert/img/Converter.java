@@ -2,6 +2,7 @@ package com.liumapp.convert.img;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 
 /**
@@ -11,6 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @homepage http://www.liumapp.com
  * @date 5/7/18
  */
+@EnableDiscoveryClient
 @SpringBootApplication
 public class Converter {
 
