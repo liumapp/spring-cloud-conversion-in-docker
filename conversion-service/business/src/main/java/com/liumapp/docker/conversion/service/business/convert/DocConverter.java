@@ -32,8 +32,8 @@ public class DocConverter {
         FirstPagePattern firstPagePattern = new FirstPagePattern();
         DocResultPattern docResultPattern = new DocResultPattern();
         AllPagePattern allPagePattern = new AllPagePattern();
-        Doc2PDF doc2PDF = new Doc2PDF();
         try {
+            Doc2PDF doc2PDF = new Doc2PDF();
             doc2PDF.doc2pdf(docPattern.getPdfPath() , docPattern.getSysPath());
         } catch (Exception e) {
             e.printStackTrace();

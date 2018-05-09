@@ -43,7 +43,7 @@ public class CellToPDF {
      * @param excelPath excel file path
      * @param pdfPath pdf file path
      */
-    public void excel2pdf(String pdfPath, String excelPath) {
+    public void excel2pdf(String pdfPath, String excelPath) throws Exception {
         // 验证License
         if (!getLicense()) {
             return;
@@ -59,7 +59,7 @@ public class CellToPDF {
             long now = System.currentTimeMillis();
             System.out.println("共耗时：" + ((now - old) / 1000.0) + "秒\n\n" + "文件保存在:" + file.getPath());
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new Exception("convert excel to pdf failed .");
         }
     }
 
