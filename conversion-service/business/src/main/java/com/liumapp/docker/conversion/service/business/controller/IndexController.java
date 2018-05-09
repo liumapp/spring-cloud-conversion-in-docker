@@ -1,6 +1,5 @@
 package com.liumapp.docker.conversion.service.business.controller;
 
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,10 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/")
 public class IndexController {
 
-
     @GetMapping("")
-    public String index (ModelMap model) {
+    public String index () {
         return "this is business module";
+    }
+
+    @RequestMapping("sendDoc")
+    public String sendDoc () {
+        return "success";
     }
 
 }
