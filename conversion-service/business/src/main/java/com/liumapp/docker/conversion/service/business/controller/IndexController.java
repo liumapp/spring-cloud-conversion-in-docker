@@ -19,10 +19,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/")
 public class IndexController {
 
-    @Value("${convert.pdfpath}")
+    @Value("${convert.pdfPath}")
     private String pdfPath;
 
-    @Value("${convert.docpath}")
+    @Value("${convert.docPath}")
     private String docPath;
 
     @Autowired

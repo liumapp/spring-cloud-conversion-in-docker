@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: business
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: conversion-config
+      profile: dev
+      label: master
+server:
+  port: 8080
+eureka:
+  client:
+    service-url:
+      defaultZone: http://conversion-eureka:1234/eureka/

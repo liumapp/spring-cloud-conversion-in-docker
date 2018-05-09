@@ -18,10 +18,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest(classes = {Business.class})
 public class BusinessTest{
 
-    @Value("${convert.pdfpath}")
+    @Value("${convert.pdfPath}")
     private String pdfPath;
 
-    @Value("${convert.docpath}")
+    @Value("${convert.docPath}")
     private String docPath;
 
     @Test
