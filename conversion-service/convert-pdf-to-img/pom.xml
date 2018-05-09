@@ -59,6 +59,11 @@
       <artifactId>fastjson</artifactId>
       <version>1.2.15</version>
     </dependency>
+    <dependency>
+      <groupId>com.liumapp.pattern.conversion</groupId>
+      <artifactId>conversion-pattern</artifactId>
+      <version>v1.0.0</version>
+    </dependency>
   </dependencies>
 
   <dependencyManagement>
