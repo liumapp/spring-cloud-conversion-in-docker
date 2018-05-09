@@ -7,5 +7,9 @@ package com.liumapp.docker.conversion.service.business.customer;
  * @homepage http://www.liumapp.com
  * @date 5/9/18
  */
+
 public class HandleFirstPicResult {
+
+
+
 }

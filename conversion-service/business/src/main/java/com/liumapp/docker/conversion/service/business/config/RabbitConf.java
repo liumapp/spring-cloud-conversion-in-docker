@@ -15,18 +15,23 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitConf {
 
     @Bean
-    public Queue ImgConverterQueue () {
-        return new Queue ("img-converter-queue");
+    public Queue FirstPicConverterQueue () {
+        return new Queue ("first-pic-converter-queue");
     }
 
     @Bean
-    public Queue SimpleImgConverterQueue () {
-        return new Queue("simple-img-converter-queue");
+    public Queue FirstPicConverterResultQueue () {
+        return new Queue ("first-pic-converter-result-queue");
     }
 
     @Bean
-    public Queue ImgConverterResultQueue () {
-        return new Queue ("img-converter-result-queue");
+    public Queue AllPicConverterQueue () {
+        return new Queue ("all-pic-converter-queue");
+    }
+
+    @Bean
+    public Queue AllPicConverterResultQueue () {
+        return new Queue ("all-pic-converter-result-queue");
     }
 
     @Bean
