@@ -1,5 +1,6 @@
 package com.liumapp.docker.conversion.service.business;
 
+import com.liumapp.convert.cell.CellToPDF;
 import com.liumapp.convert.doc.Doc2PDF;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,6 +25,9 @@ public class BusinessTest{
     @Value("${convert.docPath}")
     private String docPath;
 
+    @Value("${convert.excelPath}")
+    private String excelPath;
+
     @Test
     public void testDoc () {
         Doc2PDF doc2PDF = new Doc2PDF();
@@ -32,7 +36,8 @@ public class BusinessTest{
 
     @Test
     public void testExcel () {
-        
+        CellToPDF cellToPDF = new CellToPDF();
+        cellToPDF.excel2pdf(pdfPath + "/testexcel.pdf" , excelPath + "/test.xlsx");
     }
 
 }
