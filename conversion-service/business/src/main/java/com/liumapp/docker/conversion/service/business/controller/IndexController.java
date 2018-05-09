@@ -1,7 +1,6 @@
 package com.liumapp.docker.conversion.service.business.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.liumapp.convert.doc.Doc2PDF;
 import com.liumapp.pattern.conversion.DocPattern;
 import com.liumapp.pattern.conversion.ExcelPattern;
 import org.springframework.amqp.core.AmqpTemplate;
@@ -42,6 +41,10 @@ public class IndexController {
         return "this is business module";
     }
 
+    /**
+     * 立即返回结果
+     * @return string
+     */
     @RequestMapping("doc")
     public String sendDoc () {
         DocPattern docPattern = new DocPattern();
@@ -49,6 +52,10 @@ public class IndexController {
         return "success";
     }
 
+    /**
+     * 立即返回结果
+     * @return string
+     */
     @RequestMapping("excel")
     public String sendExcel () {
         ExcelPattern excelPattern = new ExcelPattern();
