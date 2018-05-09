@@ -1,6 +1,9 @@
 package com.liumapp.docker.conversion.service.business.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.liumapp.convert.doc.Doc2PDF;
+import com.liumapp.pattern.conversion.DocPattern;
+import com.liumapp.pattern.conversion.ExcelPattern;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -41,7 +44,15 @@ public class IndexController {
 
     @RequestMapping("doc")
     public String sendDoc () {
-        amqpTemplate.convertAndSend("");
+        DocPattern docPattern = new DocPattern();
+        amqpTemplate.convertAndSend("doc-converter-queue", JSON.toJSONString(docPattern));
+        return "success";
+    }
+
+    @RequestMapping("excel")
+    public String sendExcel () {
+        ExcelPattern excelPattern = new ExcelPattern();
+        amqpTemplate.convertAndSend("excel-converter-queue", JSON.toJSONString(excelPattern));
         return "success";
     }
 

@@ -42,6 +42,7 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-actuator</artifactId>
     </dependency>
+
     <dependency>
       <groupId>com.liumapp.convert.doc</groupId>
       <artifactId>convert-doc-to-pdf</artifactId>
@@ -50,6 +51,11 @@
     <dependency>
       <groupId>com.liumapp.convert.cell</groupId>
       <artifactId>convert-excel-to-pdf</artifactId>
+      <version>v1.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.liumapp.pattern.conversion</groupId>
+      <artifactId>conversion-pattern</artifactId>
       <version>v1.0.0</version>
     </dependency>
   </dependencies>
