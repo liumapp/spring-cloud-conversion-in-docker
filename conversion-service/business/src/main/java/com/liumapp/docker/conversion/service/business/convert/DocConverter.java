@@ -1,5 +1,7 @@
 package com.liumapp.docker.conversion.service.business.convert;
 
+import org.springframework.amqp.rabbit.annotation.RabbitHandler;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 /**
@@ -10,8 +12,12 @@ import org.springframework.stereotype.Component;
  * @date 5/9/18
  */
 @Component
+@RabbitListener(queues = "doc-converter-queue")
 public class DocConverter {
 
+    @RabbitHandler
+    public void process () {
 
+    }
 
 }
