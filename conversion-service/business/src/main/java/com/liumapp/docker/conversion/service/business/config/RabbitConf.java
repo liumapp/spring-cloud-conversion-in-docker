@@ -30,13 +30,23 @@ public class RabbitConf {
     }
 
     @Bean
-    public Queue OfficeConverterResultQueue () {
-        return new Queue ("office-converter-result-queue");
+    public Queue DocConverterResultQueue () {
+        return new Queue ("doc-converter-result-queue");
     }
 
     @Bean
-    public Queue OfficeConverterQueue () {
-        return new Queue ("office-converter-queue");
+    public Queue DocConverterQueue () {
+        return new Queue ("doc-converter-queue");
+    }
+
+    @Bean
+    public Queue ExcelConverterQueue () {
+        return new Queue ("excel-converter-queue");
+    }
+
+    @Bean
+    public Queue ExcelConverterResultQueue () {
+        return new Queue ("excel-converter-result-queue");
     }
 
 }

@@ -41,8 +41,7 @@ public class IndexController {
 
     @RequestMapping("doc")
     public String sendDoc () {
-        Doc2PDF doc2PDF = new Doc2PDF();
-        doc2PDF.doc2pdf(pdfPath + "/test.pdf" , docPath + "/test.doc");
+        amqpTemplate.convertAndSend("");
         return "success";
     }
 

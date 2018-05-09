@@ -27,5 +27,6 @@
     <module>model</module>
 	<module>convert-doc-to-pdf</module>
 	<module>convert-excel-to-pdf</module>
+	<module>conversion-pattern</module>
   </modules>
 </project>
