@@ -1,8 +1,10 @@
 package com.liumapp.docker.conversion.service.business.customer;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * @author liumapp
@@ -12,6 +14,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @date 5/9/18
  */
 @Component
-@RabbitListener(queues = "")
+@RabbitListener(queues = "all-pic-converter-result-queue")
 public class HandleAllPicResult {
+
+    private static Logger logger = LoggerFactory.getLogger(HandleAllPicResult.class);
+
+    @RabbitHandler
+    public void process () {
+
+    }
+
 }
