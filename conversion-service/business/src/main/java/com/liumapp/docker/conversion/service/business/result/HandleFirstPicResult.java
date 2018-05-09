@@ -21,7 +21,7 @@ public class HandleFirstPicResult {
 
     @RabbitHandler
     public void process (String msg) {
-
+        logger.info("get info from first-pic-converter-result-queue , msg is : " + msg);
     }
 
 }

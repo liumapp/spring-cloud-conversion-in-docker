@@ -21,7 +21,7 @@ public class HandleExcelResult {
 
     @RabbitHandler
     public void process (String msg) {
-
+        logger.info("get info from excel-converter-result-queue , msg is : " + msg);
     }
 
 }

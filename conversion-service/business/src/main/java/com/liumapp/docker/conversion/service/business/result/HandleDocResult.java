@@ -21,7 +21,7 @@ public class HandleDocResult {
 
     @RabbitHandler
     public void process (String msg) {
-
+        logger.info("get info from doc-converter-result-queue , msg is : " + msg);
     }
 
 }

@@ -21,7 +21,7 @@ public class HandleAllPicResult {
 
     @RabbitHandler
     public void process (String msg) {
-
+        logger.info("get info from all-pic-converter-result-queue , msg is : " + msg);
     }
 
 }
