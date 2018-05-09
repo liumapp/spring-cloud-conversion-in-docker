@@ -1,13 +1,24 @@
-spring:
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: springcloud
-    password: 123456
 server:
-  port: 8080
+  port: 8085
 
-liumapp:
-  convert:
-    img:
-      path: /usr/local/tomcat/project/convert-pdf-to-img/img/
+spring:
+  application:
+    name: convert-pdf-to-img
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: conversion-config
+      profile: dev
+      label: master
+  rabbitmq:
+      host: localhost
+      port: 5672
+      username: springcloud
+      password: 123456
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://conversion-eureka:1234/eureka/
+
