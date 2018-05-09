@@ -25,6 +25,12 @@ public class IndexController {
     @Value("${convert.docPath}")
     private String docPath;
 
+    @Value("${convert.excelPath}")
+    private String excelPath;
+
+    @Value("${convert.imgPath}")
+    private String imgPath;
+
     @Autowired
     private AmqpTemplate amqpTemplate;
 
