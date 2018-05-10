@@ -48,7 +48,7 @@ public class IndexController {
      * @return string
      */
     @RequestMapping("doc")
-    public String sendDoc () {
+    public String sendDoc () throws InterruptedException {
         DocPattern docPattern = new DocPattern();
         docPattern.setType("sys");
         docPattern.setPdfPath(pdfPath + "/output" + new Date() + ".pdf");
@@ -62,7 +62,7 @@ public class IndexController {
      * @return string
      */
     @RequestMapping("excel")
-    public String sendExcel () {
+    public String sendExcel () throws InterruptedException {
         ExcelPattern excelPattern = new ExcelPattern();
         excelPattern.setType("sys");
         excelPattern.setPdfPath(pdfPath + "/output" + new Date() + ".pdf");
